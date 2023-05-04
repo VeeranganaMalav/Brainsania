@@ -1,0 +1,153 @@
+{
+    "programming" : [
+        {
+            "id" : 1,
+            "title" : "Developer",
+            "description" : "You will learn fundamental knowledge in IT and level up in the direction of product management. Get a sought-after profession and the opportunity to open a business in the field of information technology.",
+            "duration" : "12 months",
+            "specialization" : "frontend",
+            "level" : "beginner"
+        },
+        {
+            "id" : 12,
+            "title" : "Software Engineer",
+            "description" : "This is a 12-month training program during which you will make an informed choice of specialization, gain basic knowledge and level up in them. You will be able to master one of the five popular IT specializations.",
+            "duration" : "9 months",
+            "specialization" : "frontend",
+            "level" : "beginner"
+        },
+        {
+            "id" : 3,
+            "title" : "Frontend Developer",
+            "description" : "You will gain basic knowledge and in practice learn how to create websites and applications, design interfaces and work with complex front-end developer tools. ",
+            "duration" : "7 months",
+            "specialization" : "frontend",
+            "level" : "beginner"
+        },
+        {
+            "id" : 4,
+            "title" : "JavaScript Programmer",
+            "description" : "Become a JavaScript developer to write websites and animate their content. You will be able to create interactive and dynamic web applications using the full power of technologies available in the browser. ",
+            "duration" : "12 months",
+            "specialization" : "frontend",
+            "level" : "beginner"
+        },
+        {
+            "id" : 5,
+            "title" : "Frontend Developer Master",
+            "description" : "This is a 24-month training program during which you will learn and master the fundamentals of programming, basic computer science concepts, digital technologies, software, operating systems, databases, analytics systems, programming languages and more.",
+            "duration" : "12 months",
+            "specialization" : "frontend",
+            "level" : "intermediate"
+        },
+        {
+            "id" : 6,
+            "title" : "DevOps Engineer",
+            "description" : "Learn to control and automate the work of development and administration departments",
+            "duration" : "24 months",
+            "specialization" : "backend",
+            "level" : "intermediate"
+        },
+        {
+            "id" : 7,
+            "title" : "C++ Software Engineer",
+            "description" : "This is a 24-month training program during which you will learn and master the fundamentals of programming, basic computer science concepts, digital technologies, software, operating systems, databases, analytics systems, programming languages and more.",
+            "duration" : "6 months",
+            "specialization" : "backend",
+            "level" : "intermediate"
+        },
+        {
+            "id" : 8,
+            "title" : "Java Programmer",
+            "description" : "Get trained as a Java software engineer. You will gain basic knowledge of algorithms, learn the Java language in practice and be able to create network chats, applications, mobile games and other services.",
+            "duration" : "18 months",
+            "specialization" : "backend",
+            "level" : "intermediate"
+        },
+        {
+            "id" : 9,
+            "title" : "Python Software Engineer",
+            "description" : "This is a 24-month training program during which you will learn and master the fundamentals of programming, basic computer science concepts, digital technologies, software, operating systems, databases, analytics systems, programming languages and more.",
+            "duration" : "10 months",
+            "specialization" : "backend",
+            "level" : "advanced"
+        },
+        {
+            "id" : 10,
+            "title" : "MERN Developer",
+            "description" : "This is a 24-month training program during which you will learn and master the fundamentals of programming, basic computer science concepts, digital technologies, software, operating systems, databases, analytics systems, programming languages and more.",
+            "duration" : "7 months",
+            "specialization" : "fullstack",
+            "level" : "advanced"
+        },
+        {
+            "id" : 11,
+            "title" : "React Developer",
+            "description" : "This is a 24-month training program during which you will learn and master the fundamentals of programming, basic computer science concepts, digital technologies, software, operating systems, databases, analytics systems, programming languages and more.",
+            "duration" : "9 months",
+            "specialization" : "frontend",
+            "level" : "intermediate"
+        }
+    ],
+    "IT" : [
+        {
+            "id" : 12,
+            "title" : "Test Engineer",
+            "description" : "This is a 12-month training program during which you will make an informed choice of specialization, gain basic knowledge, and, as a result, get a job or open your own business in IT. ",
+            "duration" : "12 months",
+            "specialization" : "testing",
+            "level" : "beginner"
+        },
+        {
+            "id" : 13,
+            "title" : "Manual Testing",
+            "description" : "This is a super-intensive training program for those who want to quickly understand IT and gain in-demand skills. You will be able to master the profession of a manual tester and start working in the profession in 6 months.",
+            "duration" : "6 months",
+            "specialization" : "testing",
+            "level" : "beginner"
+        },
+        {
+            "id" : 14,
+            "title" : "Test Automation",
+            "description" : "You will gain basic knowledge, make an informed choice of career trajectory, gain skills in manual and automated testing, and eventually find a job.",
+            "duration" : "12 months",
+            "specialization" : "testing",
+            "level" : "beginner"
+        },
+        {
+            "id" : 15,
+            "title" : "Data Analyst",
+            "description" : "You will gain basic knowledge, make an informed choice of specialization, gain analytical skills, and eventually find a job.",
+            "duration" : "12 months",
+            "specialization" : "analytics",
+            "level" : "beginner"
+        },
+        {
+            "id" : 16,
+            "title" : "Business Analyst",
+            "description" : "You will gain basic knowledge, make an informed choice of specialization, gain analytical skills, and eventually find a job.",
+            "duration" : "9 months",
+            "specialization" : "analytics",
+            "level" : "beginner"
+        },
+        {
+            "id" : 17,
+            "title" : "Big Data Analyst",
+            "description" : "This program includes 12 months of training and 3 months of technology specialization. You will gain basic knowledge, make an informed choice of direction, upgrade your research and reporting skills.",
+            "duration" : "12 months",
+            "specialization" : "analytics",
+            "level" : "intermediate"
+        },
+        {
+            "id" : 18,
+            "title" : "Systems Analyst",
+            "description" : "You will learn fundamental knowledge in IT and pump in the direction of data analysis. Get a sought-after profession and the opportunity to open a business in the field of information technology",
+            "duration" : "12 months",
+            "specialization" : "analytics",
+            "level" : "intermediate"
+        }
+    ],
+    "architecture" : [
+        
+    ]
+}
