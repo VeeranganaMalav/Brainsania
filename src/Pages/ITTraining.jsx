@@ -1,10 +1,10 @@
 import { Box, Grid, GridItem, HStack, Heading, Input, Radio, RadioGroup, Stack, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 
-const Programming = () => {
+const ITTraining = () => {
     return (
         <div style={{ fontFamily: "Montserrat, sans-serif" }}>
-            <Heading style={{ textAlign: "left", padding: "30px 30px" }}>Programming</Heading>
+            <Heading style={{ textAlign: "left", padding: "30px 30px" }}>IT Training</Heading>
             <HStack spacing="35px" bg="gray.100" style={{ padding: "60px 30px" }}>
                 <VStack w="30%" spacing="30px">
                     <Box w="100%" style={{ borderRadius: "25px", background: "white", padding: "20px 20px" }}>
@@ -15,14 +15,20 @@ const Programming = () => {
                         <Text style={{ fontWeight: "700", fontSize: "20px", paddingBottom: "15px" }}>Specializations</Text>
                         <RadioGroup>
                             <Stack spacing={5} direction='column'>
-                                <Radio colorScheme='blue' value='frontend'>
-                                    Frontend
+                                <Radio colorScheme='blue' value='testing'>
+                                    Testing
                                 </Radio>
-                                <Radio colorScheme='blue' value='backend'>
-                                    Backend
+                                <Radio colorScheme='blue' value='analytics'>
+                                    Analytics
                                 </Radio>
-                                <Radio colorScheme='blue' value='fullstack'>
-                                    FullStack
+                                <Radio colorScheme='blue' value='programing'>
+                                    Programming
+                                </Radio>
+                                <Radio colorScheme='blue' value='project management'>
+                                    Project Management
+                                </Radio>
+                                <Radio colorScheme='blue' value='architecture'>
+                                    Architecture
                                 </Radio>
                             </Stack>
                         </RadioGroup>
@@ -64,4 +70,4 @@ const Programming = () => {
     )
 }
 
-export default Programming
+export default ITTraining

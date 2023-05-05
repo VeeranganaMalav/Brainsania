@@ -1,4 +1,12 @@
 {
+    "users" : [
+        {
+            "id" : 1,
+            "name" : "Veerangana",
+            "email" : "veera@gmail.xyz",
+            "password" : "1234"
+        }
+    ],
     "programming" : [
         {
             "id" : 1,
@@ -112,7 +120,7 @@
             "description" : "You will gain basic knowledge, make an informed choice of career trajectory, gain skills in manual and automated testing, and eventually find a job.",
             "duration" : "12 months",
             "specialization" : "testing",
-            "level" : "beginner"
+            "level" : "intermediate"
         },
         {
             "id" : 15,
@@ -120,7 +128,7 @@
             "description" : "You will gain basic knowledge, make an informed choice of specialization, gain analytical skills, and eventually find a job.",
             "duration" : "12 months",
             "specialization" : "analytics",
-            "level" : "beginner"
+            "level" : "advanced"
         },
         {
             "id" : 16,
@@ -145,9 +153,66 @@
             "duration" : "12 months",
             "specialization" : "analytics",
             "level" : "intermediate"
+        },{
+            "id" : 19,
+            "title" : "Network Engineer",
+            "description" : "Learn to configure equipment and routing protocols, design secure and scalable networks, automate routine work",
+            "duration" : "12 months",
+            "specialization" : "architecture",
+            "level" : "beginner"
+        },
+        {
+            "id" : 20,
+            "title" : "DevOps Engineer",
+            "description" : "Learn to control and automate the work of development and administration departments",
+            "duration" : "24 months",
+            "specialization" : "architecture",
+            "level" : "intermediate"
+        },
+        {
+            "id" : 21,
+            "title" : "System Administrator",
+            "description" : "Learn to maintain servers, design and administer a local network",
+            "duration" : "12 months",
+            "specialization" : "architecture",
+            "level" : "intermediate"
         }
     ],
-    "architecture" : [
-        
+    "design" : [
+        {
+            "id" : 22,
+            "title" : "3D Modeling",
+            "description" : "Basic course in 3D modeling. Theory and practice in a short time. Work with real tasks and projects. ",
+            "duration" : "9 months",
+            "level" : "beginner"
+        },
+        {
+            "id" : 23,
+            "title" : "Graphic Designer",
+            "description" : "Basic course in graphic designing. Theory and practice in a short time. Design logos, corporate identity, advertising and print layouts ",
+            "duration" : "12 months",
+            "level" : "beginner"
+        },
+        {
+            "id" : 24,
+            "title" : "UI/UX Designer",
+            "description" : "The main course in the profession of UX designer. Short training period, theory and practice on real problems.",
+            "duration" : "12 months",
+            "level" : "intermediate"
+        },
+        {
+            "id" : 25,
+            "title" : "Web Designer",
+            "description" : "Basic web design course. The course includes theory and practice and will help you create beautiful and user-friendly websites. Training in a short time.",
+            "duration" : "12 months",
+            "level" : "beginner"
+        },
+        {
+            "id" : 26,
+            "title" : "Residential interior designer",
+            "description" : "You will master ArchiCAD, 3ds Max + Corona and interior design theory, create 4 projects of varying complexity. Learn how to work with a customer and in a team - you will be able to compete with practitioners.",
+            "duration" : "24 months",
+            "level" : "advanced"
+        }
     ]
 }
