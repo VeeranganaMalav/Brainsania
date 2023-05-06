@@ -1,10 +1,14 @@
-import { Box, Button, FormLabel, Heading, Input, Stack } from '@chakra-ui/react'
+import { Box, Button, Center, FormControl, FormLabel, Heading, Input, Stack } from '@chakra-ui/react'
 import axios from 'axios';
 import React, { useState } from 'react'
 
 const Registration = () => {
 
-    const [formData, setFormData] = useState({});
+    const [formData, setFormData] = useState({
+        name : "",
+        email : "",
+        password : ""
+    });
 
     const handleChange = (e) => {
         let {name, value} = e.target;
@@ -14,13 +18,12 @@ const Registration = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
 
-        // axios({
-        //     url : `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`,
-        //     method: 'post',
-        //     data : formData
-        // });
+        axios({
+            url : `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`,
+            method: 'post',
+            data : formData
+        });
     }
 
     return (
@@ -29,21 +32,21 @@ const Registration = () => {
                 <Heading style={{ margin: "50px 0px" }}>Register</Heading>
                 <form onSubmit={handleSubmit}>
                     <Stack spacing="25px">
-                        <Box>
+                        <FormControl>
                             <FormLabel>Full Name</FormLabel>
                             <Input type='text' name="name" value={formData.name} placeholder='Enter your Full Name' onChange={handleChange}/>
-                        </Box>
-                        <Box>
+                        </FormControl>
+                        <FormControl>
                             <FormLabel>Email</FormLabel>
                             <Input type='email' name="email" value={formData.email} placeholder='Enter your email address' onChange={handleChange}/>
-                        </Box>
-                        <Box>
+                        </FormControl>
+                        <FormControl>
                             <FormLabel>Password</FormLabel>
                             <Input type='password' name="password" value={formData.password} placeholder='Enter your password' onChange={handleChange}/>
-                        </Box>
-                        <Box>
+                        </FormControl>
+                        <Center>
                             <Button type='submit' _hover={{backgroundColor: "black", color:"white"}}>Register</Button>
-                        </Box>
+                        </Center>
                     </Stack>
                 </form>
             </Box>

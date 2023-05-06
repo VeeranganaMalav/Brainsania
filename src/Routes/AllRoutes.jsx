@@ -5,6 +5,8 @@ import Home from '../Pages/Home'
 import Login from '../Pages/Login'
 import Programming from '../Pages/Programming'
 import ITTraining from '../Pages/ITTraining'
+import Design from '../Pages/Design'
+import SingleProgramPage from '../Pages/SingleProgramPage'
 
 const AllRoutes = () => {
     return (
@@ -15,6 +17,8 @@ const AllRoutes = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path='/programming' element={<Programming />}/>
                 <Route path='/ittraining' element={<ITTraining />}/>
+                <Route path='/design' element={<Design />}/>
+                <Route path='/singleprogram' element={<SingleProgramPage />}/>
             </Routes>
         </div>
     )
