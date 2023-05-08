@@ -2,6 +2,7 @@ import { Box, Flex, Grid, GridItem, Heading, Input, Radio, RadioGroup, Spacer, S
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar'
+import { Link } from 'react-router-dom';
 
 const Design = () => {
 
@@ -85,16 +86,18 @@ const Design = () => {
                 >
                     {
                         designData.map((program) => (
-                            <GridItem style={{height: "340px", borderRadius: "25px", padding: "15px", backgroundColor: "white", textAlign: "left", boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", position: "relative"}}>
-                                <Heading style={{ textAlign: "left" }}>{program.title}</Heading>
-                                <Box my={6}>
-                                    <p style={{ textAlign: "left" }}>{program.description}</p>
-                                </Box>
-                                <Box style={{position : "absolute", bottom: "20px"}}>
-                                    <p><span style={{fontWeight: "600"}}>Duration : </span>{program.duration}</p>
-                                    <p><span style={{fontWeight: "600"}}>Level : </span>{program.level}</p>
-                                </Box>
-                            </GridItem>
+                            <Link key={program.id} to={`/programs/${program.id}`}>
+                                <GridItem style={{height: "340px", borderRadius: "25px", padding: "15px", backgroundColor: "white", textAlign: "left", boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", position: "relative"}}>
+                                    <Heading style={{ textAlign: "left" }}>{program.title}</Heading>
+                                    <Box my={6}>
+                                        <p style={{ textAlign: "left" }}>{program.description}</p>
+                                    </Box>
+                                    <Box style={{position : "absolute", bottom: "20px"}}>
+                                        <p><span style={{fontWeight: "600"}}>Duration : </span>{program.duration}</p>
+                                        <p><span style={{fontWeight: "600"}}>Level : </span>{program.level}</p>
+                                    </Box>
+                                </GridItem>
+                            </Link>
                         ))
                     }
                 </Grid>

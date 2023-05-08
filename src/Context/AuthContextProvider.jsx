@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react'
+import React, {createContext, useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
@@ -16,13 +16,35 @@ const AuthContextProvider = ({children}) => {
     }
 
     const logout = () => {
-        setIsAuth(false);
-        setUser(null);
-        navigate("/");
-    }
+      setIsAuth(false);
+      setUser(null);
+      navigate('/');
+    };
+
+    const addLearning = (program) => {
+      setUser(() => ({ ...user, learning: [...user.learning, program] }));
+    };
+
+    useEffect(() => {
+      // Check if authentication state is stored in localStorage
+      const storedAuth = localStorage.getItem('isAuth');
+      const storedUser = localStorage.getItem('user');
+  
+      if (storedAuth && storedUser) {
+        setIsAuth(JSON.parse(storedAuth));
+        setUser(JSON.parse(storedUser));
+      }
+    }, []);
+  
+    useEffect(() => {
+      // Update localStorage when authentication state changes
+      localStorage.setItem('isAuth', isAuth);
+      localStorage.setItem('user', JSON.stringify(user));
+    }, [isAuth, user]);
+
 
   return (
-    <AuthContext.Provider value={{isAuth, user, login, logout}}>
+    <AuthContext.Provider value={{isAuth, user,addLearning, login, logout}}>
         {children}
     </AuthContext.Provider>
   )
