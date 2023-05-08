@@ -26,7 +26,7 @@ const Login = () => {
         e.preventDefault();
 
         axios({
-            url : `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`,
+            url : `https://teal-flag-2494-json-server.onrender.com/users`,
             method: 'get'
         })
         .then((res) => {

@@ -13,7 +13,7 @@ const MyLearning = () => {
 
     useEffect(() => {
         axios({
-            url : `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users/${userId}`,
+            url : `https://teal-flag-2494-json-server.onrender.com/users/${userId}`,
             method : 'get'
         })
         .then((res) => {

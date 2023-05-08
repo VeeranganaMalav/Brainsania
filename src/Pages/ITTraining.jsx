@@ -12,21 +12,21 @@ const ITTraining = () => {
     const [level, setLevel] = useState("");
 
     const fetchProgramsBySearch = (query) => {
-        return `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/IT?q=${query}`;
+        return `https://teal-flag-2494-json-server.onrender.com/IT?q=${query}`;
     }
 
     const fetchPrograms = (spec, level) => {
         if(spec === "" && level === ""){
-            return `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/IT`;
+            return `https://teal-flag-2494-json-server.onrender.com/IT`;
         }
         else if(spec !== "" && level === ""){
-            return `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/IT?specialization=${spec}`;
+            return `https://teal-flag-2494-json-server.onrender.com/IT?specialization=${spec}`;
         }
         else if(spec === "" && level !== ""){
-            return `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/IT?level=${level}`;
+            return `https://teal-flag-2494-json-server.onrender.com/IT?level=${level}`;
         }
         else{
-            return `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/IT?specialization=${spec}&level=${level}`;
+            return `https://teal-flag-2494-json-server.onrender.com/IT?specialization=${spec}&level=${level}`;
         }
     }
 

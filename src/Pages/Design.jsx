@@ -11,16 +11,16 @@ const Design = () => {
     const [level, setLevel] = useState("");
 
     const fetchProgramsBySearch = (query) => {
-        return `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/design?q=${query}`;
+        return `https://teal-flag-2494-json-server.onrender.com/design?q=${query}`;
     }
 
     const fetchProgramsByLevel = (level) => {
 
         if(level === ""){
-            return `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/design`;
+            return `https://teal-flag-2494-json-server.onrender.com/design`;
         }
         else{
-            return `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/design?level=${level}`;
+            return `https://teal-flag-2494-json-server.onrender.com/design?level=${level}`;
         }
     }
 
