@@ -1,6 +1,7 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, Button, Center, Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Directions = () => {
   return (
@@ -77,9 +78,11 @@ const Directions = () => {
               <p>Programming</p>
               <p>Architecture</p>
             </Box>
-            <Center p="15px 0px">
-              <Button width="60%" fontSize="18px" bg="black" padding="25px 0px" rightIcon={<ChevronRightIcon />}>To the program</Button>
-            </Center>
+            <Link to='/ittraining'>
+              <Center p="15px 0px">
+                  <Button width="60%" fontSize="18px" bg="black" padding="25px 0px" _hover={{color: "black", backgroundColor: "whiteAlpha.800"}} rightIcon={<ChevronRightIcon />}>To the program</Button>
+              </Center>
+            </Link>
           </Stack>
         </GridItem>
 
@@ -92,9 +95,11 @@ const Directions = () => {
               <p>Product marketing</p>
               <p>Brand management</p>
             </Box>
-            <Center p="15px 0px">
-              <Button width="60%" fontSize="18px" bg="black" color="whiteAlpha.800" mt={170} padding="25px 0px" rightIcon={<ChevronRightIcon />}>To the program</Button>
-            </Center>
+            <Link to='/ittraining'>
+              <Center p="15px 0px">
+                  <Button width="60%" fontSize="18px" bg="black" color="whiteAlpha.800" _hover={{color: "black", backgroundColor: "whiteAlpha.800"}} mt={170} padding="25px 0px" rightIcon={<ChevronRightIcon />}>To the program</Button>
+              </Center>
+            </Link>
           </Stack>
         </GridItem>
 
@@ -108,9 +113,11 @@ const Directions = () => {
               <p>Object design</p>
               <p>Digital design</p>
             </Box>
-            <Center p="15px 0px">
-              <Button width="60%" fontSize="18px" bg="black" color="whiteAlpha.800" mt={135} padding="25px 0px" rightIcon={<ChevronRightIcon />}>To the program</Button>
-            </Center>
+            <Link to='/design'>
+              <Center p="15px 0px">
+                  <Button width="60%" fontSize="18px" bg="black" color="whiteAlpha.800" _hover={{color: "black", backgroundColor: "whiteAlpha.800"}} mt={135} padding="25px 0px" rightIcon={<ChevronRightIcon />}>To the program</Button>
+              </Center>
+            </Link>
           </Stack>
         </GridItem>
 

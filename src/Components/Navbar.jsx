@@ -1,5 +1,5 @@
 import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, HStack, Image, Spacer, Stack, Text, useDisclosure } from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import {Link} from "react-router-dom";
 import logo from '../images/teal-flag-2494-logo.png'
 import React, { useContext } from 'react'
@@ -7,7 +7,7 @@ import { AuthContext } from '../Context/AuthContextProvider';
 
 const Navbar = () => {
 
-    const {isAuth, user, login, logout} = useContext(AuthContext);
+    const {isAuth, user, logout} = useContext(AuthContext);
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
@@ -71,7 +71,15 @@ const Navbar = () => {
                     </Link>
                 </HStack>
                 <Text fontSize="xl" fontWeight={700} _hover={{color: "#9d9b9e"}}  onClick={onOpen}>Programs</Text>
-                <Text fontSize="xl" fontWeight={700} _hover={{color: "#9d9b9e"}}>Magazine</Text>
+                {
+                    isAuth ? (
+                        <Link to={`/users/${user.id}`}>
+                            <Text fontSize="xl" fontWeight={700} _hover={{color: "#9d9b9e"}}>My Learning</Text>
+                        </Link>
+                    ) : (
+                        null
+                    )
+                }
                 <Text fontSize="xl" fontWeight={700} _hover={{color: "#9d9b9e"}}>Events</Text>
                 <Text fontSize="xl" fontWeight={700} _hover={{color: "#9d9b9e"}}>Job Search</Text>
                 <Spacer />

@@ -1,14 +1,19 @@
-import { Box, Button, Center, FormControl, FormLabel, Heading, Input, Stack } from '@chakra-ui/react'
+import { Box, Button, Center, FormControl, FormLabel, Heading, Input, Stack, useToast } from '@chakra-ui/react'
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import Navbar from '../Components/Navbar';
 
 const Registration = () => {
 
     const [formData, setFormData] = useState({
         name : "",
         email : "",
-        password : ""
+        password : "",
+        learning : []
     });
+    const [usersData, setUsersData] = useState([]);
+
+    const toast = useToast();
 
     const handleChange = (e) => {
         let {name, value} = e.target;
@@ -16,18 +21,61 @@ const Registration = () => {
         setFormData({...formData, [name] : value});
     }
 
+    const fetchUsersData = () => {
+        axios({
+            url : `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`,
+            method: 'get'
+        })
+        .then((res) => {
+            setUsersData(res.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
+    useEffect(() => {
+        fetchUsersData();
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios({
-            url : `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`,
-            method: 'post',
-            data : formData
-        });
+        let userExist = usersData.find((user) => user.email === formData.email);
+
+        if(userExist){
+            toast({
+                title: `User already exists`,
+                status: 'error',
+                isClosable: true,
+            })
+        }
+        else{
+            axios({
+                url : `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`,
+                method: 'post',
+                data : formData
+            })
+            .then((res) => {
+                toast({
+                    title: `User registered successfully`,
+                    status: 'success',
+                    isClosable: true,
+                });
+
+                setFormData({
+                    name : "",
+                    email : "",
+                    password : ""
+                })
+            });
+        }
+
     }
 
     return (
         <div style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <Navbar />
             <Box style={{ width: "40%", margin: "auto", marginTop: "70px" }}>
                 <Heading style={{ margin: "50px 0px" }}>Register</Heading>
                 <form onSubmit={handleSubmit}>
