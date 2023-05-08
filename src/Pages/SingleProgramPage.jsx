@@ -15,7 +15,7 @@ const SingleProgramPage = () => {
 
     useEffect(() => {
         axios({
-            url: `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/programs/${id}`,
+            url: `https://teal-flag-2494-json-server.onrender.com/programs/${id}`,
             method: 'get'
         })
         .then((res) => {
@@ -29,7 +29,7 @@ const SingleProgramPage = () => {
 
     useEffect(() => {
         axios({
-            url: `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users/${user.id}`,
+            url: `https://teal-flag-2494-json-server.onrender.com/users/${user.id}`,
             method: 'put',
             data : user
         })
