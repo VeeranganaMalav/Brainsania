@@ -109,17 +109,23 @@ Runs the json-server
         └── index.js
 ```
 
+
 ### Screenshots
+<br>
+<img width="1440" src="https://drive.google.com/uc?id=1XicLjEGDXuMQLzY-rnaHNBm8GoQJ_sJQ" alt="landing page preview">
+<hr>
+<br>
+<img width="1440" src="https://drive.google.com/uc?id=1gD1Cl4JW4rNhNRxy4pItZf1L9yEC8Wfo" alt="landing page 2">
+<hr>
+<br>
+<img width="1440" src="https://drive.google.com/uc?id=1uNpEmgXzZsLuI6jGZNOFmlUZNljMkqY1" alt="course page">
+<hr>
+<br>
+<img width="1440" src="https://drive.google.com/uc?id=16l4oltlmTqQCGqsR0Ql1C-dvOTfs9jUO" alt="login page">
+<hr>
+<br>
+<img width="1440" src="https://drive.google.com/uc?id=1gcKf3d7ag4nUB8GAWhsnJohpvkyJZGd0" alt="register page">
 
-<img width="1440" src="https://drive.google.com/file/d/1XicLjEGDXuMQLzY-rnaHNBm8GoQJ_sJQ/view?usp=sharing" alt="landing page preview">
-
-<img width="1440" src="https://drive.google.com/file/d/1gD1Cl4JW4rNhNRxy4pItZf1L9yEC8Wfo/view?usp=sharing" alt="landing page 2">
-
-<img width="1440" src="https://drive.google.com/file/d/1uNpEmgXzZsLuI6jGZNOFmlUZNljMkqY1/view?usp=sharing" alt="course page">
-
-<img width="1440" src="https://drive.google.com/file/d/16l4oltlmTqQCGqsR0Ql1C-dvOTfs9jUO/view?usp=sharing" alt="login page">
-
-<img width="1440" src="https://drive.google.com/file/d/1gcKf3d7ag4nUB8GAWhsnJohpvkyJZGd0/view?usp=sharing" alt="register page">
 
 ### Acknowledgements
 - [Chakra UI Documentation](https://chakra-ui.com/)
