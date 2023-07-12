@@ -7,7 +7,8 @@ const Footer = () => {
         <div style={{ fontFamily: "Montserrat, sans-serif" }}>
             <Box style={{ padding: "10px 30px 50px 30px", marginTop: "300px" }}>
                 <HStack spacing="28px" fontWeight={600}>
-                    <Image src={logo} alt='geek-brains-logo' width={200} />
+                    {/* <Image src={logo} alt='geek-brains-logo' width={200} /> */}
+                    <Image src={"https://drive.google.com/uc?id=124-9YxZqrQn7FFUwRfvud_GCfhjXGByR"} alt='geek-brains-logo' width={200} />
                     <p>+7 499 922-47-10</p>
                     <p>8 800 700-68-41</p>
                     <p>support@brainsania.in</p>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Flex, Grid, GridItem, HStack, Heading, Image, Tag, Text, useToast } from '@chakra-ui/react'
 import Footer from '../Components/Footer'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { AuthContext } from '../Context/AuthContextProvider'
 
@@ -10,6 +10,7 @@ const SingleProgramPage = () => {
 
     const {user, addLearning} = useContext(AuthContext);
     const [program, setProgram] = useState({});
+    const navigate = useNavigate();
     const { id } = useParams();
     const toast = useToast();
 
@@ -26,21 +27,6 @@ const SingleProgramPage = () => {
             console.log(err);
         })
     }, [id]);
-
-    useEffect(() => {
-        axios({
-            url: `https://teal-flag-2494-json-server.onrender.com/users/${user.id}`,
-            method: 'put',
-            data : user
-        })
-        .then((res) => {
-            console.log(res.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }, [user]);
-
 
     function handleAdd(){
             let userLearning = user.learning;
@@ -77,6 +63,10 @@ const SingleProgramPage = () => {
 
     }
 
+    const handleRedirect = () => {
+        navigate("/login");
+    }
+
     return (
         <div style={{ fontFamily: "Montserrat, sans-serif" }}>
             <Navbar />
@@ -101,11 +91,21 @@ const SingleProgramPage = () => {
                                 )
                             }
                         </Box>
-                        <Box>
-                            <Tag variant='solid' colorScheme='blue' p={3}>
-                                <Text fontSize="xl" onClick={handleAdd}>Start Learning</Text>
-                            </Tag>
-                        </Box>
+                        {
+                            user ? (
+                                <Box>
+                                    <Tag variant='solid' colorScheme='blue' p={3}>
+                                        <Text fontSize="xl" onClick={handleAdd}>Start Learning</Text>
+                                    </Tag>
+                                </Box>
+                            ) : (
+                                <Box>
+                                    <Tag variant='solid' colorScheme='blue' p={3}>
+                                        <Text fontSize="xl" onClick={handleRedirect}>Login to start learning</Text>
+                                    </Tag>
+                                </Box>
+                            )
+                        }
                     </Box>
                 </Box>
 
