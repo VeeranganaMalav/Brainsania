@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 const AuthContextProvider = ({children}) => {
 
     let [isAuth, setIsAuth] = useState(false);
-    let [user, setUser] = useState(null);
+    let [user, setUser] = useState({});
     const navigate = useNavigate();
 
     const login = (userFound) => {
@@ -17,12 +17,12 @@ const AuthContextProvider = ({children}) => {
 
     const logout = () => {
       setIsAuth(false);
-      setUser(null);
+      setUser({});
       navigate('/');
     };
 
     const addLearning = (program) => {
-      setUser(() => ({ ...user, learning: [...user.learning, program] }));
+      setUser((prevUser) => ({ ...prevUser, learning: [...prevUser.learning, program] }));
     };
 
     useEffect(() => {

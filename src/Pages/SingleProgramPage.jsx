@@ -8,7 +8,8 @@ import { AuthContext } from '../Context/AuthContextProvider'
 
 const SingleProgramPage = () => {
 
-    const {user, addLearning} = useContext(AuthContext);
+    const {isAuth} = useContext(AuthContext);
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || {});
     const [program, setProgram] = useState({});
     const navigate = useNavigate();
     const { id } = useParams();
@@ -29,8 +30,10 @@ const SingleProgramPage = () => {
     }, [id]);
 
     function handleAdd(){
+
             let userLearning = user.learning;
             let courseExist = userLearning.find((course) => course.id === program.id);
+
     
             if(courseExist){
                 toast({
@@ -40,19 +43,26 @@ const SingleProgramPage = () => {
                 })
             }
             else{
-                addLearning(program);
-    
-                // axios({
-                //     url: `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users/${user.id}`,
-                //     method: 'put',
-                //     data : user
-                // })
-                // .then((res) => {
-                //     console.log(res.data);
-                // })
-                // .catch((err) => {
-                //     console.log(err);
-                // });
+                const updatedUser = {
+                    ...user,
+                    learning: [...userLearning, program]
+                }
+
+                localStorage.setItem("user", JSON.stringify(updatedUser));
+                // addLearning(program);
+                
+                
+                axios({
+                    url: `https://teal-flag-2494-json-server.onrender.com/users/${user.id}`,
+                    method: 'put',
+                    data : updatedUser
+                })
+                .then((res) => {
+                    console.log(res.data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
                 
                 toast({
                     title: `Program added to learning`,
@@ -92,7 +102,7 @@ const SingleProgramPage = () => {
                             }
                         </Box>
                         {
-                            user ? (
+                            isAuth ? (
                                 <Box>
                                     <Tag variant='solid' colorScheme='blue' p={3}>
                                         <Text fontSize="xl" onClick={handleAdd}>Start Learning</Text>
