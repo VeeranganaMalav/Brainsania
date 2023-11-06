@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Flex, Grid, GridItem, HStack, Heading, Image, Tag, Text, useToast } from '@chakra-ui/react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Flex, Grid, GridItem, HStack, Heading, Image, Stack, Tag, Text, useMediaQuery, useToast } from '@chakra-ui/react'
 import Footer from '../Components/Footer'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -14,6 +14,8 @@ const SingleProgramPage = () => {
     const navigate = useNavigate();
     const { id } = useParams();
     const toast = useToast();
+
+    const [isLarge] = useMediaQuery('(min-width: 62em)');
 
     useEffect(() => {
         axios({
@@ -84,7 +86,10 @@ const SingleProgramPage = () => {
                 <Box w="100%" bg="gray.100" mt={10} style={{ textAlign: "left", padding: "50px 50px" }}>
                     <Box w="60%">
                         <Box>
-                            <Heading fontSize="6xl" style={{ fontFamily: "Montserrat, sans-serif" }}>{program.title}</Heading>
+                            <Heading 
+                                fontSize={{ base: "5xl", md: "5xl", lg:"6xl" }} 
+                                style={{ fontFamily: "Montserrat, sans-serif" }}
+                            >{program.title}</Heading>
                         </Box>
                         <Box my={10}>
                             <p style={{ fontSize: "22px" }}>{program.description}</p>
@@ -132,10 +137,10 @@ const SingleProgramPage = () => {
 
                         <Flex gap={10}>
                             <Box style={{ backgroundColor: "white", width: "55%", padding: "20px 20px", borderRadius: "25px" }}>
-                                <HStack spacing="40px">
+                                <Stack spacing="40px" direction={ isLarge ? "row" : "column" }>
                                     <Image src='https://gb.ru/channels/base/images/teachers/levieev.png' alt="Mike Smith" style={{ width: "100px", borderRadius: "50%" }} />
                                     <p style={{ fontWeight: "700", fontSize: "26px" }}>Mike Smith</p>
-                                </HStack>
+                                </Stack>
                                 <Box my={5}>
                                     <p style={{ fontWeight: "600" }}>Program Instructor:</p>
                                     <p>Programming, data science</p>
@@ -147,10 +152,11 @@ const SingleProgramPage = () => {
                                 </Box>
                             </Box>
                             <Box style={{ backgroundColor: "white", width: "55%", padding: "20px 20px", borderRadius: "25px" }}>
-                                <HStack spacing="40px">
-                                    <Image src='https://gb.ru/channels/base/images/teachers/savat.png' alt="Alexei Walker" style={{ width: "150px", borderRadius: "50%" }} />
+                                <Stack spacing="40px" direction={ isLarge ? "row" : "column" }>
+                                    <Image src='https://gb.ru/channels/base/images/teachers/savat.png' alt="Alexei Walker" style={{ borderRadius: "50%" }} 
+                                    width={{ base: "100px", md: "100px", lg: "150px" }}/>
                                     <p style={{ fontWeight: "700", fontSize: "26px" }}>Alexei Walker</p>
-                                </HStack>
+                                </Stack>
                                 <Box my={5}>
                                     <p style={{ fontWeight: "600" }}>Program Instructor:</p>
                                     <p>Mathematics</p>
@@ -162,10 +168,10 @@ const SingleProgramPage = () => {
                                 </Box>
                             </Box>
                             <Box style={{ backgroundColor: "white", width: "55%", padding: "20px 20px", borderRadius: "25px" }}>
-                                <HStack spacing="40px">
+                                <Stack spacing="40px" direction={ isLarge ? "row" : "column" }>
                                     <Image src='https://gb.ru/channels/base/images/teachers/zaayrnyj.png' alt="Murat Deniz" style={{ width: "100px", borderRadius: "50%" }} />
                                     <p style={{ fontWeight: "700", fontSize: "26px" }}>Murat Deniz</p>
-                                </HStack>
+                                </Stack>
                                 <Box my={5}>
                                     <p style={{ fontWeight: "600" }}>Program Instructor:</p>
                                     <p>Programming, C#</p>
@@ -177,10 +183,10 @@ const SingleProgramPage = () => {
                                 </Box>
                             </Box>
                             <Box style={{ backgroundColor: "white", width: "55%", padding: "20px 20px", borderRadius: "25px" }}>
-                                <HStack spacing="40px">
+                                <Stack spacing="40px" direction={ isLarge ? "row" : "column" }>
                                     <Image src='https://gb.ru/channels/base/images/teachers/kamyan.png' alt="Sean Paul" style={{ width: "100px", borderRadius: "50%" }} />
                                     <p style={{ fontWeight: "700", fontSize: "26px" }}>Sean Paul</p>
-                                </HStack>
+                                </Stack>
                                 <Box my={5}>
                                     <p style={{ fontWeight: "600" }}>Program Instructor:</p>
                                     <p>Developer, Fundamentals of Programming</p>
@@ -198,7 +204,10 @@ const SingleProgramPage = () => {
 
                 {/* --------------------------- HIRING PARTNERS -------------------------- */}
                 <Flex direction="column">
-                    <Box w="60%" style={{ textAlign: "left", padding: "50px 50px" }}>
+                    <Box 
+                        w={{ base: "80%", md: "80%", lg: "60%" }} 
+                        style={{ textAlign: "left", padding: "50px 50px" }}
+                    >
                         <Heading style={{ fontFamily: "Montserrat, sans-serif" }}>Hiring Partners</Heading>
                         <Box my={10}>
                             <p style={{ fontSize: "24px" }}>The guarantee of employment is fixed in the contract. If after successful training you do not find a job, we will refund your money.</p>
@@ -343,7 +352,7 @@ const SingleProgramPage = () => {
                         <p style={{ fontSize: "22px" }}>The program brings together the experience of leading experts and methodologists, fundamental and applied knowledge, and up-to-date technological tools. All this is presented in an accessible way - we know how to teach and know exactly what the path in the IT profession can be.</p>
                     </Box>
                     <Grid
-                        w="70%"
+                        w={{ base: "90%", md: "90%" , lg: "70%" }}
                         templateColumns='repeat(2, 1fr)'
                         gap={10}
                         my={10}
@@ -447,7 +456,7 @@ const SingleProgramPage = () => {
                     <Heading size="xl" style={{ fontFamily: "Montserrat, sans-serif" }}>Frequently Asked <span style={{ color: "slateblue" }}>Questions</span></Heading>
                     <Accordion allowToggle>
                         <Grid
-                            w="70%"
+                            w={{ base: "90%", md: "90%" , lg: "70%" }}
                             margin="auto"
                             templateColumns='repeat(2, 1fr)'
                             gap={10}
